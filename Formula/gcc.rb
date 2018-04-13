@@ -134,6 +134,7 @@ class Gcc < Formula
       ]
     else
       args += [
+        "--disable-multilib",
         "--libdir=/usr/lib64",
         "--with-isl=#{Formula["isl@0.18"].opt_prefix}",
         "--with-bugurl=https://github.com/Linuxbrew/homebrew-core/issues",
