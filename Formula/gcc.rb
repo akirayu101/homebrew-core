@@ -136,7 +136,6 @@ class Gcc < Formula
       args += [
         "--with-isl=#{Formula["isl@0.18"].opt_prefix}",
         "--with-bugurl=https://github.com/Linuxbrew/homebrew-core/issues",
-        "--disable-multilib",
       ]
 
       # Change the default directory name for 64-bit libraries to `lib`
@@ -216,7 +215,7 @@ class Gcc < Formula
 
       system "../configure", *args
 
-      make_args = []
+      make_args = ["-B /usr/lib64"]
       # Use -headerpad_max_install_names in the build,
       # otherwise lto1 load commands cannot be edited on El Capitan
       if MacOS.version == :el_capitan
