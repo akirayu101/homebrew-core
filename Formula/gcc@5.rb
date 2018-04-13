@@ -192,11 +192,11 @@ class GccAT5 < Formula
     end
 
     # Fix Linux error: gnu/stubs-32.h: No such file or directory.
-    if OS.mac? && MacOS.prefer_64_bit?
-      args << "--enable-multilib"
-    else
+    # if OS.mac? && MacOS.prefer_64_bit?
+    #   args << "--enable-multilib"
+    # else
       args << "--disable-multilib"
-    end
+    # end
 
     args << "--enable-host-shared" if build.with?("jit") || build.with?("all-languages")
 
