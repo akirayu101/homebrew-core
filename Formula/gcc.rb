@@ -136,6 +136,7 @@ class Gcc < Formula
       args += [
         "--with-isl=#{Formula["isl@0.18"].opt_prefix}",
         "--with-bugurl=https://github.com/Linuxbrew/homebrew-core/issues",
+        "--disable-multilib",
       ]
 
       # Change the default directory name for 64-bit libraries to `lib`
