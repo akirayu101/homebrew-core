@@ -181,6 +181,7 @@ class GccAT5 < Formula
       # A no-op unless --HEAD is built because in head warnings will
       # raise errors. But still a good idea to include.
       "--disable-werror",
+      "--disable-multilib",
       "--with-pkgversion=Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip,
     ]
 
